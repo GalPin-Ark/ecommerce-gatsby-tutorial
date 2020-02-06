@@ -24,8 +24,8 @@ const Checkout = class extends React.Component {
     event.preventDefault()
     const { error } = await this.stripe.redirectToCheckout({
       items: [{ sku: "sku_GgeLeWOYKm3wya", quantity: 1 }],
-      successUrl: `${process.env.GATSBY_API_URL}page-2/`,
-      cancelUrl: process.env.GATSBY_API_URL,
+      successUrl: `https://${process.env.GATSBY_API_URL}page-2/`,
+      cancelUrl: `https://${process.env.GATSBY_API_URL}`,
     })
 
     if (error) {
