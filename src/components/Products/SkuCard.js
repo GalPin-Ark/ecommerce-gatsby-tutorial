@@ -72,7 +72,7 @@ const SkuCard = class extends React.Component {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button variant="contained" color="primary" onClick={event => this.addToCart(event, sku.id)} disabled={this.state.disabled} size="small"><span className="material-icons">add_shopping_cart</span>{this.state.buttonText}</Button>
+        <Button variant="contained" color="primary" onClick={event => this.addToCart(event, sku.id)} disabled={this.state.disabled} size="small">{this.state.buttonText}<span className="material-icons">add_shopping_cart</span></Button>
       </CardActions>
       {this.state.paymentMessage}
     </Card>

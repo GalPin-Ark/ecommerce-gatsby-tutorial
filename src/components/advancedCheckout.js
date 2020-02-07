@@ -39,8 +39,9 @@ const Checkout = class extends React.Component {
     return (
   
       <Button variant="contained" color="secondary" onClick={event => this.redirectToCheckout(event)} disabled={!this.props.cart.length}>
-      <span className="material-icons">{this.props.cart.length ? 'shopping_cart' : 'remove_shopping_cart'}</span>
+      
       {this.props.cart.length ? 'GO TO CHECKOUT' : 'CART IS EMPTY'}
+      <span className="material-icons">{this.props.cart.length ? 'shopping_cart' : 'remove_shopping_cart'}</span>
       </Button>
     )
   }
