@@ -1,5 +1,5 @@
 import React from 'react'
-
+import Button from '@material-ui/core/Button';
 const buttonStyles = {
   fontSize: '13px',
   textAlign: 'center',
@@ -27,7 +27,7 @@ const Checkout = class extends React.Component {
     const { error } = await this.stripe.redirectToCheckout({
       items: this.props.cart,
       successUrl: `https://${process.env.GATSBY_API_URL}/page-2/`,
-      cancelUrl: `https://${process.env.GATSBY_API_URL}/advanced`,
+      cancelUrl: `https://${process.env.GATSBY_API_URL}/advanced/`,
     })
 
     if (error) {
@@ -37,13 +37,11 @@ const Checkout = class extends React.Component {
 
   render() {
     return (
-      <button
-        style={buttonStyles}
-        onClick={event => this.redirectToCheckout(event)}
-        disabled={!this.props.cart.length}
-      >
-        {this.props.cart.length ? 'GO TO CHECKOUT' : 'CART IS EMPTY'}
-      </button>
+  
+      <Button variant="contained" color="secondary" onClick={event => this.redirectToCheckout(event)} disabled={!this.props.cart.length}>
+      <span className="material-icons">check_circle</span>
+      {this.props.cart.length ? 'GO TO CHECKOUT' : 'CART IS EMPTY'}
+      </Button>
     )
   }
 }

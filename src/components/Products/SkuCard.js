@@ -1,5 +1,9 @@
 import React from 'react'
-
+import Card from '@material-ui/core/Card';
+import CardActions from '@material-ui/core/CardActions';
+import CardContent from '@material-ui/core/CardContent';
+import Button from '@material-ui/core/Button';
+import Typography from '@material-ui/core/Typography';
 const cardStyles = {
   display: 'flex',
   flexDirection: 'column',
@@ -55,18 +59,23 @@ const SkuCard = class extends React.Component {
   render() {
     const sku = this.props.sku
     return (
-      <div style={cardStyles}>
-        <h4>{sku.attributes.name}</h4>
-        <p>Price: {formatPrice(sku.price, sku.currency)}</p>
-        <button
-          style={buttonStyles}
-          onClick={event => this.addToCart(event, sku.id)}
-          disabled={this.state.disabled}
-        >
-          {this.state.buttonText}
-        </button>
-        {this.state.paymentMessage}
-      </div>
+
+    <Card >
+      <CardContent>
+       
+        <Typography variant="h5" component="h2">
+        {sku.attributes.name}
+        </Typography>
+        
+        <Typography variant="body2" component="p">
+        Price: {formatPrice(sku.price, sku.currency)}
+        </Typography>
+      </CardContent>
+      <CardActions>
+        <Button variant="contained" color="primary" onClick={event => this.addToCart(event, sku.id)} disabled={this.state.disabled} size="small">{this.state.buttonText}</Button>
+      </CardActions>
+      {this.state.paymentMessage}
+    </Card>
     )
   }
 }
