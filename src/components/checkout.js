@@ -27,7 +27,7 @@ const Checkout = class extends React.Component {
     return (
   
        <Button variant="contained" color="primary" onClick={event => this.redirectToCheckout(event)}>
-       <span className="material-icons">check_circle</span>
+       <span className="material-icons">shopping_cart</span>
        Buy Tour
        </Button>
     )
