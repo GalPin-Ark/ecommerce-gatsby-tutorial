@@ -7,7 +7,7 @@ import SEO from '../components/seo'
 
 import Cart from '../components/Cart'
 import Skus from '../components/Products/Skus'
-
+import Button from '@material-ui/core/Button';
 const AdvancedExamplePage = () => (
   <Layout>
     <SEO title="Advanced Example" />
@@ -16,7 +16,13 @@ const AdvancedExamplePage = () => (
     <Cart>
       <Skus />
     </Cart>
-    <Link to="/">Go back to the easy example</Link>
+    
+    <Link to="/" style={{ textDecoration: `none` }}>
+    <Button variant="contained" >
+    <span className="material-icons">arrow_back</span>
+    Go back to the easy example
+       </Button>
+    </Link>
   </Layout>
 )
 

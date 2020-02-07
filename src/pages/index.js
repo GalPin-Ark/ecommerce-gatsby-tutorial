@@ -5,6 +5,7 @@ import Layout from "../components/layout"
 import Image from "../components/image"
 import SEO from "../components/seo"
 import Checkout from "../components/checkout"
+import Button from '@material-ui/core/Button';
 
 const IndexPage = () => (
   <Layout>
@@ -18,7 +19,12 @@ const IndexPage = () => (
     <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
       <Image />
     </div>
-    <Link to="/advanced/">Go to Advanced</Link>
+    <Link to="/advanced/" style={{ textDecoration: `none` }}>
+    <Button variant="contained" >
+      Go to advanced
+       <span className="material-icons">arrow_forward</span>
+       </Button>
+    </Link>
   </Layout>
 )
 
