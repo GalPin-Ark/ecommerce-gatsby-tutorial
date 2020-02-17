@@ -14,6 +14,30 @@ module.exports = {
       {
         name:'Page2',
         link:'/page-2'
+      },
+      {
+        name:'Advanced',
+        link:'/advanced'
+      },
+      {
+        name:'Error',
+        link:'/404'
+      },
+      {
+        name:'Productos',
+        link:'/skius'
+      },
+      {
+        name:'Advanced2',
+        link:'/advanced'
+      },
+      {
+        name:'Error2',
+        link:'/404'
+      },
+      {
+        name:'Productos2',
+        link:'/skius'
       }
     ],
   },
