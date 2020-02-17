@@ -8,7 +8,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 import List from '@material-ui/core/List';
 import Divider from '@material-ui/core/Divider';
 import ListItem from '@material-ui/core/ListItem';
-// import ImageFixed from "../components/ImageFixed";
+import ImageFixed from "./imageFixed";
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1,
@@ -54,8 +54,13 @@ const Header = ({ siteTitle, menuLinks }) => {
       onKeyDown={toggleDrawer(side, false)}
     >
       <Box  m={2}>
-          {/* <ImageFixed src="logo.png" /> */}
-          asdasd
+      <Box component="span" display="block" p={1} m={1} bgcolor="background.paper">
+      <ImageFixed src="logo.png" /> 
+      </Box>
+      <Box component="span" display="block" p={1} m={1} bgcolor="background.paper">
+      {siteTitle}
+      </Box>
+         
           </Box>
       <Divider />
       <List>
@@ -90,7 +95,7 @@ const Header = ({ siteTitle, menuLinks }) => {
             </IconButton>
           </Box>
           <Box display={{ xs: 'none',sm:'none', md: 'block' }} m={1}>
-          {/* <ImageFixed src="logo.png" /> */}
+       <ImageFixed src="logo.png" /> 
           </Box>
         </div>
        
@@ -106,22 +111,7 @@ const Header = ({ siteTitle, menuLinks }) => {
               </Link>
               </Box>
               ))}
-          {/* <nav>
-            <ul style={{ display: "flex", flex: 1 }}>
-              {menuLinks.map(link => (
-                <li
-                  key={link.name}
-                  style={{
-                    listStyleType: `none`,
-                  }}
-                >
-                  <Link style={{ color: `white`, textDecoration: "none" }} to={link.link}>
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </nav> */}
+
             
           </Box>
         </div>
