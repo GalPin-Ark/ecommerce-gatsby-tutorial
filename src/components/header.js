@@ -82,7 +82,7 @@ const Header = ({ siteTitle, menuLinks }) => {
 
     <div
       style={{
-        paddingBottom: "5rem",
+        paddingBottom: "4.1rem",
       }}
     >
       <AppBar position="fixed">
