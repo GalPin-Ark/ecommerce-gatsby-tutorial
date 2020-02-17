@@ -8,7 +8,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 import List from '@material-ui/core/List';
 import Divider from '@material-ui/core/Divider';
 import ListItem from '@material-ui/core/ListItem';
-import ImageFixed from "../components/ImageFixed"
+// import ImageFixed from "../components/ImageFixed";
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1,
@@ -54,7 +54,8 @@ const Header = ({ siteTitle, menuLinks }) => {
       onKeyDown={toggleDrawer(side, false)}
     >
       <Box  m={2}>
-          <ImageFixed src="logo.png" />
+          {/* <ImageFixed src="logo.png" /> */}
+          asdasd
           </Box>
       <Divider />
       <List>
@@ -89,7 +90,7 @@ const Header = ({ siteTitle, menuLinks }) => {
             </IconButton>
           </Box>
           <Box display={{ xs: 'none',sm:'none', md: 'block' }} m={1}>
-          <ImageFixed src="logo.png" />
+          {/* <ImageFixed src="logo.png" /> */}
           </Box>
         </div>
        

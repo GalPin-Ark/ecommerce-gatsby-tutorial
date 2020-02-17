@@ -1,4 +1,4 @@
-import React from "react"
+/* import React from "react"
 import Img from 'gatsby-image';
 import { StaticQuery, graphql } from 'gatsby';
 function renderImageFixed(file) {
@@ -26,4 +26,4 @@ const ImageFixed = function (props) {
     render={({ images }) => renderImageFixed(images.edges.find(image => image.node.relativePath === props.src))}
   />
 }
-export default ImageFixed;
+export default ImageFixed; */
