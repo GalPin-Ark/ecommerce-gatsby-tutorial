@@ -10,6 +10,7 @@ import Button from '@material-ui/core/Button';
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
+    <Image src="gatsby-uni.jpg"/>
     <h1>Hi people</h1>
     <p>Welcome to your new Gatsby site.</p>
     <p>Now go build something great.</p>
@@ -17,7 +18,8 @@ const IndexPage = () => (
    
     <Checkout />
     <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
+      <Image src="gatsby-astronaut.png"/>
+      
     </div>
     <Link to="/advanced/" style={{ textDecoration: `none` }}>
     <Button variant="contained" >

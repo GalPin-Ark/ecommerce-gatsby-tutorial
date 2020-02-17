@@ -46,7 +46,7 @@ const Skius = class extends React.Component {
 
     render() {
         const props = this.props;
-        const { fetchedData, loading } = this.state
+        const { fetchedData } = this.state
         return ( <div>
             <Grid style={conatinerStyles}>
              {fetchedData.map(sku => <Grid item xs={6} sm={4} style={styGrid}>

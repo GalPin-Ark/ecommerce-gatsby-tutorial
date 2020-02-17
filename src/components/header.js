@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 import React from "react"
 import { makeStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
- import {Button,AppBar,Toolbar,Typography, IconButton,Box} from '@material-ui/core';
+ import {AppBar,Toolbar,Typography, IconButton,Box} from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu'; 
 import List from '@material-ui/core/List';
 import Divider from '@material-ui/core/Divider';
@@ -12,6 +12,10 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail'; 
+import MenuItem from '@material-ui/core/MenuItem';
+import Button from '@material-ui/core/Button';
+import Avatar from '@material-ui/core/Avatar';
+import ImageFixed from "../components/ImageFixed"
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1,
@@ -27,6 +31,10 @@ const useStyles = makeStyles(theme => ({
   },
   fullList: {
     width: 'auto',
+  },
+  large: {
+    width: theme.spacing(7),
+    height: theme.spacing(7),
   },
 }));
 const Header = ({ siteTitle, menuLinks }) => {
@@ -52,23 +60,22 @@ const Header = ({ siteTitle, menuLinks }) => {
       onClick={toggleDrawer(side, false)}
       onKeyDown={toggleDrawer(side, false)}
     >
-      <List>
-        {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItem>
-        ))}
-      </List>
+      <Box  m={2}>
+          <ImageFixed src="logo.png" />
+          </Box>
       <Divider />
       <List>
-        {['All mail', 'Trash', 'Spam'].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItem>
-        ))}
+       
+        {menuLinks.map(link => (
+              
+                <ListItem button key={link.name}>
+                <Link style={{ textDecoration: "none" }} to={link.link}>
+                    {link.name}
+                  </Link>
+              </ListItem>
+              ))}
       </List>
+
     </div>
   );
 
@@ -80,7 +87,7 @@ const Header = ({ siteTitle, menuLinks }) => {
         marginBottom: "1.45rem",
       }}
     >
-      <AppBar position="static">
+      <AppBar position="fixed">
       <Toolbar>
         <div >
           <Box display={{ xs: 'block', md: 'none' }} m={1}>
@@ -88,16 +95,40 @@ const Header = ({ siteTitle, menuLinks }) => {
               <MenuIcon/>
             </IconButton>
           </Box>
+          <Box display={{ xs: 'none',sm:'none', md: 'block' }} m={1}>
+          <ImageFixed src="logo.png" />
+          </Box>
         </div>
-        
+       
         <Typography variant="h6" className={classes.title} >
           {siteTitle}
         </Typography>
         <div >
-          <Box display={{ xs: 'none',sm:'none', md: 'none' }} m={1}>
-            <Button>Login</Button>
-            <Button>Login</Button>
-            <Button>Login</Button>
+          <Box display={{ xs: 'none',sm:'none', md: 'block' }} m={1}>
+          {menuLinks.map(link => (
+             
+                <Box key={link.name} component="div" display="inline" p={1} m={1} style={{ color: `white`}}><Link style={{ color: `white`, textDecoration: "none" }} to={link.link}>
+                {link.name}
+              </Link>
+              </Box>
+              ))}
+          {/* <nav>
+            <ul style={{ display: "flex", flex: 1 }}>
+              {menuLinks.map(link => (
+                <li
+                  key={link.name}
+                  style={{
+                    listStyleType: `none`,
+                  }}
+                >
+                  <Link style={{ color: `white`, textDecoration: "none" }} to={link.link}>
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav> */}
+            
           </Box>
         </div>
        

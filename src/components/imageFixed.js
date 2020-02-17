@@ -1,10 +1,10 @@
 import React from "react"
 import Img from 'gatsby-image';
 import { StaticQuery, graphql } from 'gatsby';
-function renderImage(file) {
-  return <Img fluid={file.node.childImageSharp.fluid} />
+function renderImageFixed(file) {
+  return <Img fixed={file.node.childImageSharp.fixed} />
 }
-const Image = function (props) {
+const ImageFixed = function (props) {
   return <StaticQuery
     query={graphql`
       query {
@@ -14,8 +14,8 @@ const Image = function (props) {
           extension
           relativePath
           childImageSharp {
-            fluid(maxWidth: 1920) {
-              ...GatsbyImageSharpFluid
+            fixed(width: 50) {
+                ...GatsbyImageSharpFixed
             }
           }
         }
@@ -23,7 +23,7 @@ const Image = function (props) {
     }
     }
     `}
-    render={({ images }) => renderImage(images.edges.find(image => image.node.relativePath === props.src))}
+    render={({ images }) => renderImageFixed(images.edges.find(image => image.node.relativePath === props.src))}
   />
 }
-export default Image;
+export default ImageFixed;
