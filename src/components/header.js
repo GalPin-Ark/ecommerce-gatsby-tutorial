@@ -54,14 +54,14 @@ const Header = ({ siteTitle, menuLinks }) => {
       onKeyDown={toggleDrawer(side, false)}
     >
       <Box  m={2}>
-      <Box component="span" display="block" p={1} m={1} bgcolor="background.paper">
-      <ImageFixed src="logo.png" /> 
-      </Box>
-      <Box component="span" display="block" p={1} m={1} bgcolor="background.paper">
-      {siteTitle}
-      </Box>
-         
+          <Box component="span" display="block" p={1} m={1} bgcolor="background.paper">
+          <ImageFixed src="logo.png" /> 
           </Box>
+          <Box component="span" display="block" p={1} m={1} bgcolor="background.paper">
+          {siteTitle}
+          </Box>
+         
+      </Box>
       <Divider />
       <List>
        
@@ -82,8 +82,7 @@ const Header = ({ siteTitle, menuLinks }) => {
 
     <div
       style={{
-        background: "rebeccapurple",
-        marginBottom: "1.45rem",
+        paddingBottom: "5rem",
       }}
     >
       <AppBar position="fixed">
