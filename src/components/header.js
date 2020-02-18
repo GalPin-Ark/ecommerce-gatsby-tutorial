@@ -85,7 +85,7 @@ const Header = ({ siteTitle, menuLinks }) => {
         paddingBottom: "3.7rem",
       }}
     >
-      <AppBar position="fixed">
+      <AppBar position="fixed" style={{backgroundColor:`#47CBC5`}}>
       <Toolbar>
         <div >
           <Box display={{ xs: 'block', md: 'none' }} m={1}>

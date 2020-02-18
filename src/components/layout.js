@@ -12,7 +12,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import Divider from '@material-ui/core/Divider';
 import StickyFooter from './StickyFooter';
 import Header from "./header"
-import "./layout.css"
+import "../styles/layout.css"
 
 const Layout = ({ children }) => {
  

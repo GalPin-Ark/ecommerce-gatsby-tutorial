@@ -7,37 +7,63 @@ import SEO from "../components/seo"
 import Checkout from "../components/checkout"
 import Button from '@material-ui/core/Button';
 import Box from '@material-ui/core/Box';
+import { useStaticQuery, graphql } from "gatsby"
+import Img from "gatsby-image"
+import FiestaImg from "../images/gatsby-happy.jpg"
+import 'bootstrap/dist/css/bootstrap.css'
 
-const IndexPage = () => (
+const IndexPage = () => {
+  const data = useStaticQuery(graphql`
+  query {
+    placeholderImage: file(relativePath: { eq: "gatsby-happy.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 1920) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+  }
+`)
+
+return (
   <Layout>
     <SEO title="Home" />
     
-    <Box component="section" style={{maxHeight: `40rem`}}>
-    <Image src="gatsby-uni.jpg"  />
-     </Box>
-     <Box component="section">
-       hola
-        Officia elit laboris in incididunt fugiat est. Occaecat cupidatat incididunt amet duis aliqua incididunt. Non anim excepteur ipsum ad quis. Pariatur sit dolor ex in consequat ea in cillum incididunt sunt. Culpa laborum fugiat nulla est consectetur minim 
-        lorem100
-        hola
-        Officia elit laboris in incididunt fugiat est. Occaecat cupidatat incididunt amet duis aliqua incididunt. Non anim excepteur ipsum ad quis. Pariatur sit dolor ex in consequat ea in cillum incididunt sunt. Culpa laborum fugiat nulla est consectetur minim 
-        lorem100
-        hola
-      
-        Officia elit laboris in incididunt fugiat est. Occaecat cupidatat incididunt amet duis aliqua incididunt. Non anim excepteur ipsum ad quis. Pariatur sit dolor ex in consequat ea in cillum incididunt sunt. Culpa laborum fugiat nulla est consectetur minim 
-        lorem100
-        hola Officia elit laboris in incididunt fugiat est. Occaecat cupidatat incididunt amet duis aliqua incididunt. Non anim excepteur ipsum ad quis. Pariatur sit dolor ex in consequat ea in cillum incididunt sunt. Culpa laborum fugiat nulla est consectetur minim 
-        lorem100
-        hola Officia elit laboris in incididunt fugiat est. Occaecat cupidatat incididunt amet duis aliqua incididunt. Non anim excepteur ipsum ad quis. Pariatur sit dolor ex in consequat ea in cillum incididunt sunt. Culpa laborum fugiat nulla est consectetur minim 
-        lorem100
-        hola
-     </Box>
+   
+  
+      <section className="swiper-container swiper-slider" style={{zIndex:`1`,backgroundImage:`url(gatsby-uni.jpg)`,backgroundRepeat:`no-repeat`,backgroundSize:`cover`,backgroundPosition:`center bottom`,maxHeight:`35rem`,height:`25rem`,display:`flex`,alignItems:`center`}}>
+   
+     
+          <div className="container">
+            <div className="row justify-content-center">
+              <div className="col-12 text-center">
+                <h2 className="text-white">Enjoy Your Dream Vacation</h2>
+                <p className="h6 text-white">Travel to the any corner of the world, without going around in circles.</p>
+               
+              </div>
+            </div>
+          </div>
+     
+  
+        
+      </section>
+  
+     
 
-   {/* 
+     
+        <Box component="div" style={{
+          zIndex: `999999999999999999999`,
+        }}>
+       hola
+       <Button variant="contained" className="btn btn-primary">
+      Go to advanced
+       <span className="material-icons">arrow_forward</span>
+       </Button>
+     </Box>
     <h1>Hi people</h1>
     <p>Welcome to your new Gatsby site.</p>
     <p>Now go build something great.</p>
-    
+    <button type="button" className="btn btn-primary">Primary</button>
    
     <Checkout />
     <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
@@ -49,8 +75,9 @@ const IndexPage = () => (
       Go to advanced
        <span className="material-icons">arrow_forward</span>
        </Button>
-    </Link> */}
+    </Link> 
   </Layout>
 )
+  }
 
 export default IndexPage
