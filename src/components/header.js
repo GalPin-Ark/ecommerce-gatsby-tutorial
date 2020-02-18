@@ -15,6 +15,7 @@ const useStyles = makeStyles(theme => ({
   },
   menuButton: {
     marginRight: theme.spacing(2),
+    '&:focus': { outline:`none`},
   },
   title: {
     flexGrow: 1,
