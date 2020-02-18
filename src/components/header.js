@@ -20,7 +20,9 @@ const useStyles = makeStyles(theme => ({
     flexGrow: 1,
   },
   list: {
+
     width: 250,
+    backgroundColor: theme.palette.background.paper,
   },
   fullList: {
     width: 'auto',
@@ -53,21 +55,26 @@ const Header = ({ siteTitle, menuLinks }) => {
       onClick={toggleDrawer(side, false)}
       onKeyDown={toggleDrawer(side, false)}
     >
-      <Box  m={2}>
-          <Box component="span" display="block" p={1} m={1} bgcolor="background.paper">
-          <ImageFixed src="logo.png" /> 
-          </Box>
-          <Box component="span" display="block" p={1} m={1} bgcolor="background.paper">
+      <Box  m={2} >
+       
+          
+          <div className="container">
+            <div className="row justify-content-center">
+              <div className="col-12 text-center">
+              <ImageFixed src="logo.png" /> 
+              <Box component="span" display="block"  p={1} m={1} bgcolor="background.paper">
           {siteTitle}
           </Box>
-         
+              </div>
+            </div>
+          </div>
       </Box>
       <Divider />
-      <List>
+      <List className="">
        
         {menuLinks.map(link => (
               
-                <ListItem button key={link.name}>
+                <ListItem button key={link.name} style={{background: `whitesmoke`,width:`96%`}}  className="m-1 shadow-sm p-3 bg-white rounded">
                 <Link style={{ textDecoration: "none" }} to={link.link}>
                     {link.name}
                   </Link>
@@ -85,7 +92,7 @@ const Header = ({ siteTitle, menuLinks }) => {
         paddingBottom: "3.7rem",
       }}
     >
-      <AppBar position="fixed" style={{backgroundColor:`#47CBC5`}}>
+      <AppBar position="fixed" style={{backgroundColor:`#663399`}}>
       <Toolbar>
         <div >
           <Box display={{ xs: 'block', md: 'none' }} m={1}>
