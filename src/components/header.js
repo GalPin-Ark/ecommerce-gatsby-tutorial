@@ -82,7 +82,7 @@ const Header = ({ siteTitle, menuLinks }) => {
 
     <div
       style={{
-        paddingBottom: "4.1rem",
+        paddingBottom: "3.7rem",
       }}
     >
       <AppBar position="fixed">
@@ -94,7 +94,7 @@ const Header = ({ siteTitle, menuLinks }) => {
             </IconButton>
           </Box>
           <Box display={{ xs: 'none',sm:'none', md: 'block' }} m={1}>
-       <ImageFixed src="logo.png" /> 
+          <ImageFixed src="logo.png" /> 
           </Box>
         </div>
        

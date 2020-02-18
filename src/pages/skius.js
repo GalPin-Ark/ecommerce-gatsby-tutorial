@@ -18,15 +18,15 @@ const Skius = class extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            loading: true,
+            loading: false,
             error: false,
             fetchedData: [],
         }
       }
     
     componentDidMount() {
-
-        this.getProducts();
+       this.getProducts();
+       
     }
 
     getProducts() {
@@ -36,25 +36,30 @@ const Skius = class extends React.Component {
         }).then(response => {
             return response.json()
         }).then(json => {
-            console.log(json)
+           
             this.setState({
-                fetchedData: json.data
+                fetchedData: json.data,
+                loading:true
             })
-
-        });
-    }
+            return json;
+        })
+      
+        } 
 
     render() {
         const props = this.props;
         const { fetchedData } = this.state
+        
         return ( <div>
             <Grid style={conatinerStyles}>
-             {fetchedData.map(sku => <Grid item xs={6} sm={4} style={styGrid}>
-            <SkuCard {...props} key={sku.id} sku={sku} />
-          </Grid>)}   
-            
-         
-          
+             {fetchedData.map(sku => 
+             
+             <Grid item key={sku.id} xs={6} sm={4} style={styGrid}>
+                <SkuCard {...props}  sku={sku} />
+               
+          </Grid> 
+     
+          )}   
         </Grid>
             
             </div>

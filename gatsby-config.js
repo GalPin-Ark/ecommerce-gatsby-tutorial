@@ -27,18 +27,6 @@ module.exports = {
         name:'Productos',
         link:'/skius'
       },
-      {
-        name:'Advanced2',
-        link:'/advanced'
-      },
-      {
-        name:'Error2',
-        link:'/404'
-      },
-      {
-        name:'Productos2',
-        link:'/skius'
-      }
     ],
   },
   plugins: [
