@@ -22,10 +22,15 @@ const useStyles = makeStyles(theme => ({
   
   footer: {
     padding: theme.spacing(3, 2),
-    marginTop: 'auto',
+    marginTop: '3rem',
     backgroundColor:
       theme.palette.type === 'dark' ? theme.palette.grey[800] : theme.palette.grey[200],
-  },
+    position:'relative',
+    bottom: '0px',
+    left: '0px',
+    clear: 'both'
+     
+  }
 }));
 
 export default function StickyFooter() {
@@ -34,12 +39,13 @@ export default function StickyFooter() {
   return (
     <div>
       <CssBaseline />
-      <footer className={classes.footer}>
-        <Container maxWidth="sm">
+      <footer className={classes.footer}> 
+
+       <Container maxWidth="sm">
           <Typography variant="body1">My sticky footer can be found here.</Typography>
           <Copyright />
-        </Container>
-      </footer>
+        </Container> 
+      </footer> 
     </div>
   );
 }

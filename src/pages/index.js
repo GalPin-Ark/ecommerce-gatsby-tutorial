@@ -6,11 +6,21 @@ import Image from "../components/image"
 import SEO from "../components/seo"
 import Checkout from "../components/checkout"
 import Button from '@material-ui/core/Button';
+import Box from '@material-ui/core/Box';
 
 const IndexPage = () => (
-  <Layout>
+  <Layout style={{border: `red 2px solid`}}>
     <SEO title="Home" />
-    <Image src="gatsby-uni.jpg"/>
+    
+    <Box component="section" style={{maxHeight: `40rem`}}>
+    <Image src="gatsby-uni.jpg"  />
+     </Box>
+     <Box component="section">
+        Officia elit laboris in incididunt fugiat est. Occaecat cupidatat incididunt amet duis aliqua incididunt. Non anim excepteur ipsum ad quis. Pariatur sit dolor ex in consequat ea in cillum incididunt sunt. Culpa laborum fugiat nulla est consectetur minim 
+
+     </Box>
+
+   {/* 
     <h1>Hi people</h1>
     <p>Welcome to your new Gatsby site.</p>
     <p>Now go build something great.</p>
@@ -26,7 +36,7 @@ const IndexPage = () => (
       Go to advanced
        <span className="material-icons">arrow_forward</span>
        </Button>
-    </Link>
+    </Link> */}
   </Layout>
 )
 
