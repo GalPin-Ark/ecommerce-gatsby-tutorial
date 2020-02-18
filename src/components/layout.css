@@ -1,10 +1,15 @@
 html {
+  margin: 0;
+  padding:0 ;
+height: 100% !important;
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
 body {
   margin: 0;
+  padding:0 ;
+  height: 100% !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -619,4 +624,16 @@ pre tt:after {
   html {
     font-size: 100%;
   }
+  
 }
+#___gatsby{
+  min-height: 100% !important;
+}
+#gatsby-focus-wrapper{
+  min-height: 100% !important;
+  height: 100% !important;
+}
+/* footer {
+  margin-top:calc(5% + 60px);
+  bottom: 0;
+} */

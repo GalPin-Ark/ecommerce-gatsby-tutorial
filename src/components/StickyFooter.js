@@ -22,13 +22,12 @@ const useStyles = makeStyles(theme => ({
   
   footer: {
     padding: theme.spacing(3, 2),
-    marginTop: '3rem',
     backgroundColor:
       theme.palette.type === 'dark' ? theme.palette.grey[800] : theme.palette.grey[200],
+      
     position:'relative',
     bottom: '0px',
     left: '0px',
-    clear: 'both'
      
   }
 }));
@@ -37,9 +36,9 @@ export default function StickyFooter() {
   const classes = useStyles();
 
   return (
-    <div>
+    <div  className={classes.footer} id="footer">
       <CssBaseline />
-      <footer className={classes.footer}> 
+      <footer> 
 
        <Container maxWidth="sm">
           <Typography variant="body1">My sticky footer can be found here.</Typography>

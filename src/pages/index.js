@@ -9,15 +9,28 @@ import Button from '@material-ui/core/Button';
 import Box from '@material-ui/core/Box';
 
 const IndexPage = () => (
-  <Layout style={{border: `red 2px solid`}}>
+  <Layout>
     <SEO title="Home" />
     
     <Box component="section" style={{maxHeight: `40rem`}}>
     <Image src="gatsby-uni.jpg"  />
      </Box>
      <Box component="section">
+       hola
         Officia elit laboris in incididunt fugiat est. Occaecat cupidatat incididunt amet duis aliqua incididunt. Non anim excepteur ipsum ad quis. Pariatur sit dolor ex in consequat ea in cillum incididunt sunt. Culpa laborum fugiat nulla est consectetur minim 
-
+        lorem100
+        hola
+        Officia elit laboris in incididunt fugiat est. Occaecat cupidatat incididunt amet duis aliqua incididunt. Non anim excepteur ipsum ad quis. Pariatur sit dolor ex in consequat ea in cillum incididunt sunt. Culpa laborum fugiat nulla est consectetur minim 
+        lorem100
+        hola
+      
+        Officia elit laboris in incididunt fugiat est. Occaecat cupidatat incididunt amet duis aliqua incididunt. Non anim excepteur ipsum ad quis. Pariatur sit dolor ex in consequat ea in cillum incididunt sunt. Culpa laborum fugiat nulla est consectetur minim 
+        lorem100
+        hola Officia elit laboris in incididunt fugiat est. Occaecat cupidatat incididunt amet duis aliqua incididunt. Non anim excepteur ipsum ad quis. Pariatur sit dolor ex in consequat ea in cillum incididunt sunt. Culpa laborum fugiat nulla est consectetur minim 
+        lorem100
+        hola Officia elit laboris in incididunt fugiat est. Occaecat cupidatat incididunt amet duis aliqua incididunt. Non anim excepteur ipsum ad quis. Pariatur sit dolor ex in consequat ea in cillum incididunt sunt. Culpa laborum fugiat nulla est consectetur minim 
+        lorem100
+        hola
      </Box>
 
    {/* 

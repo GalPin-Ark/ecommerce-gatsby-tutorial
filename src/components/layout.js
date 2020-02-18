@@ -15,6 +15,7 @@ import Header from "./header"
 import "./layout.css"
 
 const Layout = ({ children }) => {
+ 
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -35,6 +36,9 @@ const Layout = ({ children }) => {
       <div
         style={{
           margin: `0 auto`,
+          display: `flex`,
+          minHeight: `81vh`,
+          flexDirection: `column`,
         }}
       >
         <main>{children}</main>
