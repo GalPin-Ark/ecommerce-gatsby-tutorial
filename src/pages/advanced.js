@@ -16,11 +16,11 @@ const AdvancedExamplePage = () => (
     <Cart>
       <Skus />
     </Cart>
-    
+
     <Link to="/" style={{ textDecoration: `none` }}>
-    <Button variant="contained" >
-    <span className="material-icons">arrow_back</span>
-    Go back to the easy example
+      <Button variant="contained" >
+        <span className="material-icons">arrow_back</span>
+        Go back to the easy example
        </Button>
     </Link>
   </Layout>

@@ -13,9 +13,12 @@ import Divider from '@material-ui/core/Divider';
 import StickyFooter from './StickyFooter';
 import Header from "./header"
 import "../styles/layout.css"
+import 'bootstrap/dist/css/bootstrap.css'
+import "../styles/style.css"
+
 
 const Layout = ({ children }) => {
- 
+
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -42,10 +45,10 @@ const Layout = ({ children }) => {
         }}
       >
         <main>{children}</main>
-       
+
       </div>
       <Divider />
-        <StickyFooter/>
+      <StickyFooter />
     </>
   )
 }

@@ -14,7 +14,7 @@ const ImageFixed = function (props) {
           extension
           relativePath
           childImageSharp {
-            fixed(width: 50) {
+            fixed(width: 60) {
                 ...GatsbyImageSharpFixed
             }
           }

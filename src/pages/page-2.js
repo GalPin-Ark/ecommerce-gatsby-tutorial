@@ -7,7 +7,6 @@ import SEO from '../components/seo'
 
 class SecondPage extends Component {
   componentDidMount() {
-    // Empty localStorage after successful payment.
     localStorage.removeItem('stripe_checkout_items')
   }
 
