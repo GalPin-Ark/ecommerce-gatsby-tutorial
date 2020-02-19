@@ -7,13 +7,14 @@ import SEO from "../components/seo"
 import Checkout from "../components/checkout"
 import Button from '@material-ui/core/Button';
 import Box from '@material-ui/core/Box';
-import { useStaticQuery, graphql } from "gatsby"
+import Container from '@material-ui/core/Container';
+/* import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
-import FiestaImg from "../images/gatsby-happy.jpg"
+import FiestaImg from "../images/gatsby-happy.jpg" */
 import 'bootstrap/dist/css/bootstrap.css'
 
 const IndexPage = () => {
-  const data = useStaticQuery(graphql`
+/*   const data = useStaticQuery(graphql`
   query {
     placeholderImage: file(relativePath: { eq: "gatsby-happy.jpg" }) {
       childImageSharp {
@@ -23,7 +24,7 @@ const IndexPage = () => {
       }
     }
   }
-`)
+`) */
 
 return (
   <Layout>
@@ -48,19 +49,17 @@ return (
         
       </section>
   
-     
-
-     
-        <Box component="div" style={{
-          zIndex: `999999999999999999999`,
+        <Container component="section" maxWidth="lg" style={{
+         
+          border:`red solid 2px`
         }}>
-       hola
+     <Box p={2} display="block" justifyContent="center">
+     hola
        <Button variant="contained" className="btn btn-primary">
       Go to advanced
        <span className="material-icons">arrow_forward</span>
        </Button>
-     </Box>
-    <h1>Hi people</h1>
+       <h1>Hi people</h1>
     <p>Welcome to your new Gatsby site.</p>
     <p>Now go build something great.</p>
     <button type="button" className="btn btn-primary">Primary</button>
@@ -76,6 +75,9 @@ return (
        <span className="material-icons">arrow_forward</span>
        </Button>
     </Link> 
+     </Box>
+     </Container>
+    
   </Layout>
 )
   }

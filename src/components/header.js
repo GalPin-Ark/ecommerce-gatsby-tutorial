@@ -3,18 +3,25 @@ import PropTypes from "prop-types"
 import React from "react"
 import { makeStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
- import {AppBar,Toolbar,Typography, IconButton,Box} from '@material-ui/core';
+import {AppBar,Toolbar,Typography, IconButton,Box} from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu'; 
 import List from '@material-ui/core/List';
 import Divider from '@material-ui/core/Divider';
 import ListItem from '@material-ui/core/ListItem';
 import ImageFixed from "./imageFixed";
+import Menu from '@material-ui/core/Menu';
+import MenuItem from '@material-ui/core/MenuItem';
+import MoreVertIcon from '@material-ui/icons/MoreVert';
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1,
   },
   menuButton: {
     marginRight: theme.spacing(2),
+    '&:focus': { outline:`none`},
+  },
+  more: {
+    color:`white`,
     '&:focus': { outline:`none`},
   },
   title: {
@@ -41,6 +48,10 @@ const Header = ({ siteTitle, menuLinks }) => {
     bottom: false,
     right: false,
   });
+
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const open = Boolean(anchorEl);
+
   const toggleDrawer = (side, open) => event => {
     if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
       return;
@@ -49,6 +60,14 @@ const Header = ({ siteTitle, menuLinks }) => {
     setState({ ...state, [side]: open });
   };
 
+
+  const handleClick = event => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
   const sideList = side => (
     <div
       className={classes.list}
@@ -109,7 +128,7 @@ const Header = ({ siteTitle, menuLinks }) => {
         <Typography variant="h6" className={classes.title} >
           {siteTitle}
         </Typography>
-        <div >
+        <div className="pr-3">
           <Box display={{ xs: 'none',sm:'none', md: 'block' }} m={1}>
           {menuLinks.map(link => (
              
@@ -122,7 +141,45 @@ const Header = ({ siteTitle, menuLinks }) => {
             
           </Box>
         </div>
-       
+       <div className="pl-3">
+       <Box display={{ xs: 'none',sm:'none', md: 'block' }} m={1}>
+       <span className="material-icons pr-3">face</span>
+       <span className="material-icons pr-1">book</span>
+         </Box>
+         
+         <Box display={{ xs: 'block', md: 'none' }} m={1}>
+         <IconButton
+            aria-label="more"
+            aria-controls="long-menu"
+            aria-haspopup="true"
+            onClick={handleClick}
+            className={classes.more}
+          >
+            <MoreVertIcon />
+          </IconButton>
+          <Menu
+            id="long-menu"
+            anchorEl={anchorEl}
+            keepMounted
+            open={open}
+            onClose={handleClose}
+            PaperProps={{
+              style: {
+                width: 200,
+               
+              },
+            }}
+          >
+           
+              <MenuItem  onClick={handleClose}>
+              <span className="material-icons">face</span>facebook
+              </MenuItem>
+              <MenuItem  onClick={handleClose}>
+              <span className="material-icons">book</span>Book
+                </MenuItem>
+          </Menu>
+         </Box>
+       </div>
       </Toolbar>
     </AppBar>
     <Drawer open={state.left} onClose={toggleDrawer('left', false)}>
