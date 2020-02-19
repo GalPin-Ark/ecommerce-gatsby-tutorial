@@ -49,10 +49,7 @@ return (
         
       </section>
   
-        <Container component="section" maxWidth="lg" style={{
-         
-          border:`red solid 2px`
-        }}>
+        <Container component="section" maxWidth="lg" >
      <Box p={2} display="block" justifyContent="center">
      hola
        <Button variant="contained" className="btn btn-primary">
