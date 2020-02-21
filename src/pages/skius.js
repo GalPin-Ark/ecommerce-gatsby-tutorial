@@ -55,7 +55,7 @@ const Skius = class extends React.Component {
 
 
         for (let i = 0; i < 3; i++) {
-            table.push(<Grid item xs={6} sm={4} style={styGrid}>
+            table.push(<Grid item key={i} xs={6} sm={4} style={styGrid}>
                 <Box pt={0.5}>
                     <Skeleton variant="text" width={210} />
                     <Skeleton variant="circle" width={40} height={40} />
